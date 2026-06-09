@@ -20,6 +20,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Failed step
+          continue-on-error: true
           run: |
              echo "I will fail"
              exit 1
