@@ -1,6 +1,14 @@
 name: 02 - Workflow Events
 
-on: push
+on: 
+  push:
+    branches: main
+  pull_request:
+    types: [opened, reopened]
+  
+  schedule: 
+    - cron: "15 4,5 * * *"
+  workflow_dispatch:
 
 jobs:
   echo:
@@ -8,4 +16,4 @@ jobs:
     steps:
       - name: Show the trigger
         run: |
-          echo "HEvento que desencadeno: ${{ github.event_name }}"
+          echo "Evento que desencadeno: ${{ github.event_name }}"
