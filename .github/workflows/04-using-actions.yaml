@@ -8,7 +8,11 @@ jobs:
         steps:
         - name: Checkout code
           uses: actions/checkout@v3
-        - name: Printing Folders
-          run: |
-             echo "Folders in the repository:"
-             ls -la
+        - name: setup Node JS
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20.x
+        - name: Install dependencies
+          uses: chill-viking/npm-ci@latest
+          with:
+            working-directory: ./04-using-actions/mi-app
