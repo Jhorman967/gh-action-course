@@ -13,8 +13,8 @@ jobs:
           with:
             node-version: '20.x'
         - name: Install dependencies
-          working-directory: ./04-using-actions/mi-app
           run: npm ci
+          working-directory: ./04-using-actions/mi-app
         - name: Run tests
           working-directory: ./04-using-actions/mi-app
           run: npm test
